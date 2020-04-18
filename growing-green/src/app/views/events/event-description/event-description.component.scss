@@ -1,0 +1,62 @@
+#carouselExampleIndicators{
+    .item{
+        height:550px;
+    }
+
+    img{
+        display: block;
+        height: 550px;
+        max-width: 100%;
+        line-height: 1;
+        margin:auto;
+        width: 100%; // Add this
+ 
+    }
+}
+
+.event-description{
+    width:95%;
+    margin:auto;
+    h3{
+        background-color:#00684d;
+        color:white;
+    }
+}
+
+.btn{
+    background: linear-gradient(to right,#00684d 0%,#387000 100%) !important;
+    color:white;
+}
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px) {
+    .item {
+      height: 210px !important;
+    }
+  
+    img {
+      display: block;
+      height: 210px !important;
+      width: 100%;
+      line-height: 1;
+      margin: auto;
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width: 991px) {
+  .item {
+    height: 400px !important;
+  }
+
+  img {
+    display: block;
+    height: 400px !important;
+    width: 100%;
+    line-height: 1;
+    margin: auto;
+  }
+
+  }

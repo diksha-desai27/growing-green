@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import '~@ngx-share/button/themes/default/default-theme';
+
+html{
+   margin: 0 !important;
+   padding: 0 !important;
+   width: 100% !important;
+}
+
+body{
+   // font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-family: "mark-pro,arial,serif";
+   height:100%;
+   font-size:1rem;
+   line-height: 1.7;
+   overflow-x: hidden;
+   width:100% !important;
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+.row {
+   padding-right: 0px;
+   margin-right: 0px;
+ }
+
+*:focus{
+   box-shadow: none;
+   outline: none;
+}
+
+*.btn{
+   background: linear-gradient(to right,#00684d 0%,#387000 100%);
+   color:white;
+   border: none;
+}
+
+a{
+   cursor: pointer;
+}
+
+#toast-container > div {
+   opacity:1;
+}
+
+.no-gutters {
+   margin-right: 0;
+   margin-left: 0;
+ 
+   > .col,
+   > [class*="col-"] {
+     padding-right: 0;
+     padding-left: 0;
+   }
+ }
+
+ *.btn:hover{
+   color:#fff;
+ }
+
+

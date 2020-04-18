@@ -1,0 +1,146 @@
+<button *ngIf=" !this.userService.isLoggedIn" class="btn my-3" (click)="open(mymodal)"><fa-icon [icon]="faSignInAlt" class="pr-2"></fa-icon>Login</button>
+<button (click)="logout()" *ngIf="this.userService.isLoggedIn" class="btn my-3" >          <fa-icon [icon]="faSignOutAlt" class="pr-2"></fa-icon>
+  Logout</button>
+
+
+<ng-template #mymodal let-modal>
+
+  <div class="modal-header">
+    <img class="d-inline" src="../assets/images/growinggreenlogo.jpeg" alt="growing-green logo" width="30"
+      class="m-1" />
+    <h4 class="modal-title" id="modal-basic-title">Growing Green</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true">Login</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+          aria-controls="nav-profile" aria-selected="false">Register</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row py-3 justify-content-center">
+          <div class="col-md-8">
+            <div >
+              <form [formGroup]="signinForm">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" formControlName="email">
+                  <div *ngIf="signinSubmitted && g.email.errors" class="invalid-feedback">
+                    <div *ngIf="g.email.errors.pattern">Email must be a valid email address</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" formControlName="password">
+                  <div *ngIf=" signinSubmitted && g.password.errors" class="invalid-feedback">
+                    <div *ngIf="g.password.errors.pattern">Password must be of minimum 6 letters</div>
+                  </div>
+                </div>
+              </form>
+              <div class="text-center">
+                <button type="button" class="btn btn-outline-dark text-center" [disabled]="signinForm.invalid"
+                  (click)="loginUser(this.signinForm.value)">Login</button>
+              </div>
+              <br />
+              <div class="text-center">
+                <p>Or Log in using</p>
+              </div>
+              <div class="text-center">
+                <fa-icon [icon]="faGoogle" (click)="signInWithGoogle()" class="pr-2 fa-2x google"></fa-icon>
+
+              </div>
+            </div>
+       <!--     <div *ngIf="loggedIn===true">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" [value]="user.firstName" readonly>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" [value]="user.lastName" readonly>
+              </div>
+              <div class="form-group">
+                <label for="email2">Email</label>
+                <input type="text" class="form-control" id="email2" [value]="user.email" readonly>
+              </div>
+
+              <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
+            </div> -->
+          </div> 
+        </div>
+
+      </div>
+      <!-- Register -->
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="row py-3 justify-content-center">
+          <div class="col-md-8">
+            <div>
+              <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
+
+                <div class="form-group">
+                  <label for="fullname">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" formControlName="fullName" required>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" formControlName="email"
+                    [ngClass]="{ 'is-invalid': registerSubmitted && f.email.errors }">
+                  <div *ngIf=" registerSubmitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" formControlName="password">
+                </div>
+                <div class="text-center">
+                  <input type="submit" value="Sign Up" class="btn btn-primary " [disabled]="registerForm.invalid"
+                    [ngClass]="{ 'is-invalid': registerSubmitted && f.password.errors }">
+                   <div *ngIf="registerSubmitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+                </div>
+              </form>
+              <br />
+              <div class="text-center">
+                <p>Or Sign up using</p>
+              </div>
+              <div class="text-center">
+
+                <fa-icon [icon]="faGoogle" (click)="signInWithGoogle()" class="pr-2 fa-2x google"></fa-icon>
+
+              </div>
+
+            </div>
+           <!-- <div *ngIf="loggedIn===true">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" [value]="user.firstName" readonly>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" [value]="user.lastName" readonly>
+              </div>
+              <div class="form-group">
+                <label for="email2">Email</label>
+                <input type="text" class="form-control" id="email2" [value]="user.email" readonly>
+              </div>
+
+              <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

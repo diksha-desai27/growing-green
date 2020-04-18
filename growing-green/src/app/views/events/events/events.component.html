@@ -1,0 +1,73 @@
+<div>
+    <div class="row events-header mx-0">
+        <h1 class="text-center py-3 px-2">EVENTS CALENDAR</h1>
+        <h4 class="text-center px-2">Event sign-ups are only available to registered users who are logged in. </h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 text-center my-3 ">
+                <fa-icon [icon]="faBinoculars" class="text-center fa-2x"></fa-icon>
+                <h5 class="mt-3 mx-3">Find and view an event listed below</h5>
+            </div>
+            <div class="col-md-4 text-center my-3 ">
+                <fa-icon [icon]="faUserPlus" class="text-center fa-2x "></fa-icon>
+                <h5 class="mt-3 mx-3">Register through the event page</h5>
+            </div>
+            <div class="col-md-4 text-center my-3">
+                <fa-icon [icon]="faPaperPlane" class="text-center fa-2x mb-2"></fa-icon>
+                <h5 class="mt-3 mx-3">Check for confirmation email with more details</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-event">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center my-2">Search Upcoming Event</h2>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control mx-2 mb-3 pl-md-0 pl-5" placeholder="Search" style="width:300px;"
+                    [(ngModel)]="searchString" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 px-0">
+                <table class="table table-striped  mx-md-3 text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Event Name</th>
+                            <th scope="col">Event Location</th>
+                            <th scope="col">Event Date </th>
+                            <th scope="col">Event Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr
+                            *ngFor="let e of events|events:searchString |paginate:{id:'events_pagination',itemsPerPage:7,currentPage:page,totalItems:totalRecords}">
+                            <ng-container *ngIf=" e && e.eventStatus!='Completed'">
+                                <td><a routerLink="/events-description/{{e._id}}" style="cursor:pointer;color:initial">{{e.eventName}}</a></td>
+                                <td>{{e.eventState}}, {{e.eventCountry}}</td>
+                                <td>{{e.eventDate}}</td>
+                                <td>{{e.eventTime}}</td>
+                            </ng-container>
+
+                        </tr>
+                        <tr *ngIf="events.length==0">
+                           <td colspan="4"> <h4 class="text-center">No events Available</h4></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="row text-center">
+                    <pagination-controls maxSize="5" autoHide="true"  responsive="true" previousLabel="Previous"
+                        nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+                        screenReaderCurrentLabel="You're on page" id="events_pagination" maxSize="5"
+                        directionLinks="true" (pageChange)="page=$event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

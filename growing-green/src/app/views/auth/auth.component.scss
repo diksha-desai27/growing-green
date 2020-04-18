@@ -1,0 +1,28 @@
+.btn{
+    background-color:#49a942;
+    border-color:#49a942;
+    color:white;
+}
+.nav{
+    .nav-tabs{
+        color: #49a942;
+    }
+}
+
+.loginBtn{
+    border-radius: 15px;
+}
+
+.facebook{
+        color: #3b5998;
+        background-image: linear-gradient( to bottom, transparent 20%, white 20%, white 93%, transparent 93% );
+        background-size: 55%;
+        background-position: 70% 0;
+        background-repeat: no-repeat;
+        cursor:pointer;
+}
+
+.google{
+    color:red;
+    cursor: pointer;
+}

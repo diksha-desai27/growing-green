@@ -1,0 +1,254 @@
+.jumbotron {
+ // display: block;
+  background: linear-gradient(to right, #00684d 0%, #387000 100%) !important;
+  text-align: center;
+  width: 100%;
+  border: none;
+  padding: 20px;
+  color: white;
+
+  .card {
+    color: black;
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 450px !important;
+  opacity: 0.8;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 450px !important;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.carousel-caption {
+  top: 40%;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.img-fluid-1 {
+  align-items: center;
+  width: 100%;
+  height: 80vh !important;
+}
+
+/* Container holding the image and the text */
+.work {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 300px;
+  left: 650px;
+  font-size: xx-large;
+  padding-left: 20px;
+  padding-right: 20px;
+  background:rgba(255,255,255,0.5);
+   color:rgb(58,58,66);
+}
+
+
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.rounded-circle {
+  width: 100%;
+  height: 90%;
+  margin: auto;
+}
+
+.card-body {
+  height: 20%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+  width: 100%;
+  margin: auto;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+
+.rounded-circle:hover {
+  opacity: 0.7;
+}
+
+
+
+
+@media screen and (min-width:768px) and (max-width: 991px) {
+
+  .img-fluid-1 {
+    align-items: center;
+    width: 100%;
+    height: 25vh !important;
+  }
+
+  .text-block {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    color: white;
+  }
+}
+@media screen and (min-width: 992px) {
+  text-block {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: white;
+  }
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .carousel-image {
+      width: 100%;
+      height: 250px !important;
+      opacity: 0.8;
+    }
+    
+    .carousel-inner {
+      width: 100%;
+      height: 250px !important;
+    }
+  
+    .carousel-caption {
+      top: 20%;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+    .img-fluid-1 {
+      align-items: center;
+      width: 100%;
+      height: 30vh !important;
+    }
+  
+    .text-block {
+      position: absolute;
+      top: 10%;
+      left: 0%;
+      color: white;
+      font-size: xx-large;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+/*
+@media screen and (max-width: 767px) {
+  .carousel-image {
+    width: 100%;
+    height: 250px !important;
+    opacity: 0.8;
+  }
+  
+  .carousel-inner {
+    width: 100%;
+    height: 250px !important;
+  }
+
+  .carousel-caption {
+    top: 20%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .img-fluid-1 {
+    align-items: center;
+    width: 100%;
+    height: 30vh !important;
+  }
+
+  .text-block {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    color: white;
+    font-size: xx-large;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+} */
+
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px) {
+    .carousel-image {
+     height:250px !important;
+    }
+  
+    .carousel-inner {
+      width: 100%;
+      height: 250px !important;
+    }
+  
+    .carousel-caption {
+      top: 15%;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  
+}
+
+
+
+.parallax {
+  /* The image used */
+  background-image: url('../../../assets/images/nature-forest-trees-fog-4827.jpg');
+
+  /* Full height */
+  height: 100%; 
+  min-height: 50vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2{
+  /* The image used */
+  background-image: url('../../../assets/images/treeLove.jpg');
+
+  /* Full height */
+  height: 100%; 
+  min-height: 90vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

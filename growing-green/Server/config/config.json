@@ -1,0 +1,9 @@
+{
+    "development" : {
+        "MONGODB_URI" : "mongodb+srv://dikshaDesai:diksha2709@diksha-desai-klbez.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "production" : {
+        "port": 80,
+        "MONGODB_URI" : "mongodb://localhost:27017/go-green-db"
+    }
+}

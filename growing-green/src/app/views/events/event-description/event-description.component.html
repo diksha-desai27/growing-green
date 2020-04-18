@@ -1,0 +1,52 @@
+<!--Carousel Section-->
+<div class="row events-description-carousel">
+    <div class="col-12 pr-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item item active">
+                    <img class="d-block w-100 h-100" class="carousel-image" src="../../../assets/images/events-1.jpg"
+                        alt="First slide">
+                </div>
+                <div class="carousel-item item">
+                    <img class="d-block w-100 h-100" class="carousel-image" src="../../../assets/images/events-3.jpg"
+                        alt="Third slide ">
+                </div>
+                <div class="carousel-item item">
+                    <img class="d-block w-100 h-100" class="carousel-image" src="../../../assets/images/events-4.jpg"
+                        alt="Fourth slide">
+                </div>
+               
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row event-description my-3" *ngIf="selectedEvent">
+    <div class="col-12 px-0">
+        <h3 class="px-2">{{selectedEvent.eventName}} </h3>
+        <h5 class="px-2"><b>{{selectedEvent.eventDate |date}},&nbsp;{{selectedEvent.eventTime}}</b></h5>
+        <h5 class="px-2"><b>Location:&nbsp;{{selectedEvent.eventLocation}}</b></h5>
+        <p  class="px-2">{{selectedEvent.eventDescription}}</p>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-12">
+        <button class="btn  m-3" *ngIf="getToken" (click)="registerEvent()">Register</button>
+        <p *ngIf="!getToken">Please sign Up to Register</p>
+    </div>
+</div>

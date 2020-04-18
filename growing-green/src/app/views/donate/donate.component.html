@@ -1,0 +1,155 @@
+<div class="row">
+    <div class="col-12 pr-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active item">
+                    <img class="d-block w-100" class="carousel-image" src="../../../assets/images/volunteer-1.jpg"
+                        alt="First slide">
+                </div>
+
+                <div class="carousel-item item">
+                    <img class="d-block w-100" class="carousel-image" src="../../../assets/images/volunteer-2.jpg"
+                        alt="Second slide">
+
+                </div>
+                <div class="carousel-item item">
+                    <img class="d-block w-100" class="carousel-image" src="../../../assets/images/volunteer-3.jpg"
+                        alt="Third slide ">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class=" donation-description my-3">
+    <div class="row m-2">
+        <div class="col-md-12 px-0">
+            <h4 class="text-center">Donate To Growing Green</h4>
+            <label class="px-2">Together we can plant much-needed trees and green our world. Each dollar you give will
+                plant a
+                tree that will
+                grow to provide the essentials of life itself: <br />
+                <ul>
+                    <li>Clean air to breathe</li>
+                    <li>Healthy water to drink</li>
+                    <li>A climate that’s tolerable</li>
+                    <li>Habitat for wildlife</li>
+                    <li>Awe-inspiring beauty</li>
+                </ul>
+                You love trees and people, please support TreePeople’s mission-- DONATE TODAY!
+            </label>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row m-2">
+        <div class="col-md-12 px-0">
+            <h4 class="text-center">Your Donation at Work</h4>
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-1.jpg" class="rounded-circle mt-2" alt="donation-1" />
+                    <p><b>$25 keeps a street tree alive</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-2.jpg" class="rounded-circle mt-2" alt="donation-2" />
+                    <p><b>$50 pays for a field trip for 10 children</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-3.jpg" class="rounded-circle mt-2" alt="donation-3" />
+                    <p><b>$100 trains volunteers to water and protect urban trees</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-4.jpg" class="rounded-circle mt-2" alt="donation-4" />
+                    <p><b>$250 plants 5 park trees</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-5.jpg" class="rounded-circle mt-2" alt="donation-5" />
+                    <p><b>$500 supports Canyon Park urban forest</b></p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="../../../assets/images/donation-6.jpg" class="rounded-circle mt-2" alt="donation-6" />
+                    <p><b>$1,000 makes a mountain restoration day possible</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-2 text-center">
+        <div class="col-md-12">
+            <a class="btn donate-btn" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                aria-expanded="false" aria-controls="multiCollapseExample1">Donate Now</a>
+        </div>
+    </div>
+
+    <div class="row" style="width:90%;margin:auto">
+        <div class="col-md-12 my-3">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body border-0">
+                    <form class="border border-success p-3">
+                        <label>Donation Amount:</label>
+                        <div *ngFor="let amount of amounts" class="d-inline-flex p-2">
+                            <input type="radio" class="p-2 mt-2" name="amount" value="{{amount}}" id="amount"
+                                (change)="getDonationAmount($event)" required>${{amount}}
+                        </div>
+                        <div>
+                            <h6 class="text-center mt-3"><b>YOUR CONTACT INFORMATION</b></h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>First Name</label> <br />
+                                    <input type="text" name="firstname" class="form-control w-100">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Last Name</label> <br />
+                                    <input type="text" name="lastname" class="form-control w-100">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Street Address</label><br />
+                                    <input type="text" name="street" class="form-control w-100">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>City</label> <br />
+                                    <input type="text" name="city" class="form-control w-100">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>State</label> <br />
+                                    <input type="text" name="state" class="form-control w-100">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Zipcode</label> <br />
+                                    <input type="number" name="zipcode" class="form-control w-100">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Country</label> <br />
+                                    <input type="text" name="country" class="form-control w-100">
+                                </div>
+                            </div>
+                            <br />
+                            <div  class="w-100 text-center">
+                                <div id="paypal-button-container" class="w-100"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

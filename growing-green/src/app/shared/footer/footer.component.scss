@@ -1,0 +1,71 @@
+a {
+  color: #595959;
+}
+
+._2tga._8j9w {
+  background-color:#3b5998 !important;
+}
+
+.fb-share-button,.fa-facebook {
+  background-color: #3b5998 !important;
+}
+hr {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  hr {
+    display: block;
+  }
+  .row {
+    text-align: center;
+  }
+  .text-dark {
+    text-align: center;
+  }
+  .d-flex ul {
+    position: relative;
+    text-align: center;
+    width: 158px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.fa-icon {
+    text-align: center;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.d-flex {
+    text-align: center;
+    b {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  hr {
+    display: none;
+  }
+  .row {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  hr {
+    display: none;
+  }
+}
+
+h5{
+  color: #00684d;
+  font-weight: bolder;
+}

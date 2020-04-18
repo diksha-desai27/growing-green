@@ -1,0 +1,26 @@
+.content{
+    padding-top: 100px;;
+}
+
+.donate {
+    background-image: linear-gradient(to right,#00684d 0%,#387000 100%);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.nav-link.active {
+    color:#00684d !important;
+    font-weight: bolder;
+ }
+
+ 
+@media screen and (max-width: 767px) {
+    .content { padding-top: 100px; }
+ }
+ @media screen and (min-width:768px) and (max-width: 991px) {
+    content { padding-top: 100px; }
+ }
+ @media screen and (min-width: 992px) {
+    .content { padding-top: 100px; }
+ 
+ }
